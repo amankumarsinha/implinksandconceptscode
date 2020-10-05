@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/37512644/dynamic-web-project-java-lang-classnotfoundexception-com-mysql-jdbc-driver

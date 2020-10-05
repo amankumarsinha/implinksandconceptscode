@@ -1,0 +1,53 @@
+
+servlets
+1. Introduction to JavaEE
+2. Introduction to Servlet, Generic Servlet & Http Servlet
+3. Servlet Life Cycle
+4. Http Request & Response Handling
+5. Servlet Config & Context
+6. RequestDisptcher
+7. Http Session Management
+8. Listeners & Filters
+
+https://docs.oracle.com/javaee/6/tutorial/doc/bnafd.html
+https://www.geeksforgeeks.org/introduction-java-servlets/
+https://www.javatpoint.com/servlet-tutorial
+https://www.tutorialspoint.com/servlets/index.htm
+https://www.youtube.com/watch?v=b42CJ0r-1to&list=PLE0F6C1917A427E96
+
+jdbc
+1. Introduction to JDBC
+2. Types of drivers
+3. DriverManger
+4. Types of Statements
+5. Result Set & Scrollable Result Set
+6.Transactions
+7. Database & ResultSet Metadata
+https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html
+https://mkyong.com/tutorials/jdbc-tutorials/
+https://howtodoinjava.com/jdbc-tutorials/
+https://www.tutorialspoint.com/jdbc/index.htm
+https://www.youtube.com/watch?v=OIqKbHqXcXs&list=PLW6ElkALVON4hs9jtpTfY5_31g2yPh6di
+ 
+
+jsp
+1. Introduction to JSP
+2. JSP Life Cycle
+4. JSP Scripting Elements
+5. JSP directives
+6. JSP Standard Actions
+7. JSP Custom Tags
+8. JSTL
+
+https://www.guru99.com/jsp-tutorial.html
+https://www.journaldev.com/2114/servlet-jsp-tutorial
+https://www.tutorialspoint.com/jsp/index.htm
+https://www.youtube.com/watch?v=b42CJ0r-1to&list=PLE0F6C1917A427E96
+
+
+
+1. HTML Basics tags 2. Form elements 3. Html 5 features	https://www.w3schools.com/html/ https://www.tutorialspoint.com/html/index.htm https://www.javatpoint.com/html-tutorial https://www.tutorialspoint.com/html5/index.htm https://www.youtube.com/watch?v=eOQXwtsxh3M&list=PL0ggi_UlVzQeKb142Qj2OUt2A1iKT1lRP
+1.CSS Basics 2.CSS 3	https://www.w3schools.com/css/default.asp https://www.tutorialspoint.com/css/what_is_css.htm https://www.tutorialspoint.com/css/css3_tutorial.htm https://www.youtube.com/watch?v=GvUTqsAm9vE&list=PLamqHyWseJOIliSZ23WDS1Ky-uU5yrjOk
+1.JS Basics 2.Function 3.DOM manpulation 4.Events 5.Form Validations	https://www.w3schools.com/js/default.asp https://www.javatpoint.com/javascript-tutorial https://www.geeksforgeeks.org/javascript-tutorial/ https://www.youtube.com/watch?v=le-URjBhevE&list=PLWKjhJtqVAbk2qRZtWSzCIN38JC_NdhW5
+
+

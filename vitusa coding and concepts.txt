@@ -1,0 +1,631 @@
+1.sum of duplicate nodes
+ public static int sumOfNonDuplicates(int numberOfArray, List<Integer> elements) {
+        Set<Integer> s=new HashSet<Integer>();
+        for(Integer i: elements)
+        s.add(i);
+        int sum=0;
+        for(Integer i:s)
+        {
+            if(Collections.frequency(elements, i)==1)
+            {
+                sum+=i;
+            }
+        }
+        return sum;
+        
+
+
+    }
+  
+2.get final sequence
+public static String getFinalSequence(int arrayLength, List<Integer> elements) {
+        List b=new ArrayList<>();
+        for(Integer i:elements)
+        {
+            b.add(i);
+            Collections.reverse(b);
+        }
+        String res= b.toString();
+        String rs=res.replaceAll(",", "");
+        System.out.print(rs);
+        return rs.substring(1,rs.length()-1);
+    
+
+    }
+ 
+4
+reverse string
+public static String doStringReverse(String value) {
+        StringBuffer s=new StringBuffer(value);
+        s.reverse();
+        return s.toString();
+
+    }
+
+
+
+5reveerse element
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++)
+        {
+            arr[i]=sc.nextInt();
+
+        }
+        int b[]=reverse(arr,size);
+         for(int i=0;i<size;i++)
+        System.out.print(b[i]+" ");
+    }
+    static int[] reverse(int[] arr,int size)
+    {
+        for(int i=0;i<(size/2);i++)
+        {int temp=arr[i];
+        arr[i]=arr[size-1-i];
+        arr[size-1-i]=temp;
+        }
+
+        return arr;
+    }
+}
+
+
+6.find largest and smllest
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++)
+        {
+            arr[i]=sc.nextInt();
+
+        }
+        int b[]=largestsmallest(arr,size);
+        System.out.print(b[0]+" "+b[1]);
+        
+    }
+    static int[] largestsmallest(int arr[],int size)
+    {
+        int l=Integer.MIN_VALUE;
+        int s=Integer.MAX_VALUE;
+        int b[]=new int[2];
+        for(int i:arr)
+        {
+            if(l<i)
+            {
+                l=i;
+            }
+            if(s>i)
+            {
+                s=i;
+            }
+        }
+        b[0]=l;
+        b[1]=s;
+        return b;
+    }
+7.sort array using stack
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++)
+            arr[i]=sc.nextInt();
+        Stack<Integer>s=new Stack<Integer>();
+        Stack<Integer>s1=new Stack<Integer>();
+        for(int i:arr)
+            s.push(i);
+        while(!s.isEmpty())
+        {
+            int temp=s.pop();
+            while(!s1.isEmpty() && temp>s1.peek())
+            {
+                s.push(s1.pop());
+            }
+            s1.push(temp);
+        }
+        while(!s1.isEmpty())
+        {
+            System.out.print(s1.pop()+" ");
+        }
+
+
+    }
+}
+
+
+8.remove duplicate
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++)
+        arr[i]=sc.nextInt();
+        Arrays.sort(arr);
+        Set<Integer> s=new TreeSet<>();
+        for(int i:arr)
+              s.add(i);
+        int n=s.size();
+        
+        for(int i:s)
+        {
+            System.out.print(i+" ");
+        }
+    }
+}
+
+9.max sum contiginious arra
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        int res=sumarray(arr,size);
+        System.out.print(res);
+    }
+    static int sumarray(int[] arr,int size)
+    {
+        int sum=0;
+        int finalsum=Integer.MIN_VALUE;
+        for(int i=0;i<size;i++)
+        {
+            sum=sum+arr[i];
+            if(sum>finalsum)
+            {
+              finalsum=sum;
+            }
+            if(sum<0)
+            {
+             sum=0;
+            }
+        }
+        return finalsum;
+    }
+}
+
+10 check permutation or anagram
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+         Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+       // sc.next();
+        String s1=sc.next();
+        if(s.length()!=s1.length())
+        System.out.print("false");
+        else
+        {
+        boolean res=checkString(s,s1);
+        System.out.print(res);
+        }
+
+    }
+    static boolean checkString(String s,String s1)
+    {
+        Map<String,Integer>freq=new HashMap<String,Integer>();
+        for(int i=0;i<s.length();i++)
+        {    String a=String.valueOf(s.charAt(i));   
+            freq.put(a,freq.getOrDefault(a,0)+1);
+        }
+        Map<String,Integer>freq1=new HashMap<String,Integer>();
+       for(int i=0;i<s1.length();i++)
+        {
+            String a=String.valueOf(s1.charAt(i));
+            freq1.put(a,freq1.getOrDefault(a,0)+1);
+        
+        }
+        return freq.equals(freq1);
+    }
+    
+}
+
+12.print missing elements in array
+ public static List<Integer> calculateMissingNumbers(List<Integer> arrays) {
+        int arr[]=new int[arrays.size()];
+        int j=0;
+        for(Integer i:arrays)
+        {
+            arr[j]=i;
+            j++;
+        }
+        Arrays.sort(arr);
+        //int s=arr[0];
+        int end=arr[j-1];
+        List<Integer>l=new ArrayList<>();
+        for(int i=1;i<end;i++)
+        {
+            if(!arrays.contains(i))
+            l.add(i);
+        }
+        return l;
+       
+
+    }
+
+}
+
+13.smallest positive int if all negative 1 is smallest
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++)
+        arr[i]=sc.nextInt();
+        int smallest=small(arr,size);
+        System.out.print(smallest);
+    }
+    static int small(int []arr,int size)
+    {
+        boolean p[]=new boolean[size+1];
+        for(int i:arr)
+        {
+            if(i>0 && i<size)
+            p[i]=true;
+
+        }
+        for(int i=1;i<size;i++)
+        {
+            if(!p[i])
+            return i;
+        }
+        return size+1;
+
+    }
+}
+
+14.smallest perfecr cube
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++)
+        arr[i]=sc.nextInt();
+        Arrays.sort(arr);
+        int smallestcube=small(arr,size);
+        System.out.print(smallestcube);
+    }
+    static int small(int []arr,int size)
+    {
+        int flag=0;
+        for(int i=0;i<size;i++)
+        {
+            if(iscube(arr[i]))
+            {
+                return arr[i];
+            }
+        }
+        return 0;
+    }
+    static boolean iscube(int n)
+    {
+        //int i=0;
+        for(int i=1;i*i*i<=n;i++)
+        {
+            if(n==(i*i*i))
+            return true;
+        }
+        return false;
+    }
+}
+
+15.remove repeaating char in string
+ public static String findRepeatedCharacter(String value) {
+        StringBuffer s=new StringBuffer(value);
+        int i=0;
+        int length=s.length();
+        while(i<length-1)
+        {
+            if(s.charAt(i)==s.charAt(i+1))
+            {
+                s.deleteCharAt(i);
+                length--;
+            }
+            else
+            i++;
+        }
+        return s.toString();
+
+    }
+
+}
+
+16.count no of occurance
+
+    public static int numberOfOccurences(int arrayLength, List<Integer> elements, int val)
+     {   
+         //int arr[]=new int[elements.size()];
+         int i=0;
+        for(Integer num :elements)
+        {
+           if(val==num)
+           i++;
+            
+        }
+return i;
+    }
+
+}
+
+19.sum of negative slice  [1,2,3,-1,4,5,-9,5]==1+2+3,4+5,5
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        int k=0;
+        for(int i=0;i<size;i++)
+        {
+            arr[i]=sc.nextInt();
+            if(arr[i]<0)
+               k++;
+        }
+        int sum=0,j=0;
+        int a[]=new int[k+1];
+        for(int i:arr)
+        {
+           if(i>=0)
+           {
+               sum=sum+i;
+           }
+           else
+           {
+               a[j++]=sum;
+               sum=0;
+           }
+
+        }
+        a[j]=sum;
+        int largest=Integer.MIN_VALUE;
+        for(int i=0;i<k+1;i++)
+        {
+            if(largest<a[i])
+            largest=a[i];
+
+        }
+        System.out.print(largest);
+    }
+}
+
+
+20.stock span problem
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        int res[]=stockspam(arr,size);
+        for(int i=0;i<size;i++)
+        System.out.print(res[i]+" ");
+    }
+    static int []stockspam(int arr[],int size)
+    {
+        Stack<Integer> s=new Stack<Integer>();
+        int sp[]=new int[size];
+        sp[0]=1;
+        s.push(0);
+        for(int i=0;i<size;i++)
+        {
+            while(!s.isEmpty() && arr[s.peek()]<=arr[i])
+            s.pop();
+            if(s.isEmpty())
+            sp[i]=i+1;
+            else
+                sp[i]=i-s.peek();
+            s.push(i);
+         }
+         return sp;
+    }
+}
+
+22.remove elemet
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        int index=sc.nextInt();
+        for(int i=index;i<size-1;i++)
+        arr[i]=arr[i+1];
+        size=size-1;
+        
+        for(int i=0;i<size;i++)
+        System.out.print(arr[i]+" ");
+
+    }
+}
+
+25.fun with anagrmass
+    public static List<String> funWithAnagrams(List<String> text)
+     {
+
+    // Write your code here
+    List<String> ans=new ArrayList<String>();
+    Set<String> s=new HashSet<String>();
+    for(int i=0;i<text.size();i++)
+    {
+        String a=text.get(i);
+        String res=sort(a);
+        if(!s.contains(res))
+        {
+            ans.add(a);
+            s.add(res);
+        }
+        
+    }
+    Collections.sort(ans);
+        return ans;
+
+
+    }
+    static String sort(String s)
+    {
+        char ch[]=s.toCharArray();
+        Arrays.sort(ch);
+        return new String(ch);
+    }
+
+}
+
+26.tostring and static in contructor
+ class Student
+ {
+     String name;
+     static int i;
+     Student(String name)
+     {
+       this.name=name;
+       i=i+1;
+     }
+     public String toString()
+     {
+        return i+": "+this.name;
+     }
+
+ }
+
+
+3.heap sort
+public static String doSort(int arrayLength, List<Integer> elements) {
+        int arr[]=new int[elements.size()];
+        int j=0;
+        for(Integer i:elements)
+        arr[j++]=i;
+        int n=elements.size();
+        for(int i=(n/2)-1;i>=0;i--)
+        {
+        heapsort(arr,n,i);
+        }
+        for(int i=n-1;i>=0;i--)
+        {
+            int t=arr[0];
+            arr[0]=arr[i];
+            arr[i]=t;
+            heapsort(arr,i,0);
+        }
+        String s="";
+        for(int i=0;i<arr.length;i++)
+        {
+        s=s+String.valueOf(arr[i])+" ";
+       // System.out.print(arr[i]);
+        }
+        return s.toString();
+
+    }
+    static void heapsort(int []arr,int n,int i)
+    {
+        int large=i;
+        int l=2*i+1;
+        int r=2*i+2;
+        if(l<n && arr[l]>arr[large])
+        large=l;
+
+        if(r<n && arr[r]>arr[large])
+        large=r;
+
+        if(large!=i)
+        {
+            int t=arr[i];
+            arr[i]=arr[large];
+            arr[large]=t;
+
+            heapsort(arr,n,large);
+        }
+
+
+    }
+
+23.break a palindrome
+     public static String breakPalindrome(String palindromeStr) {
+    // Write your code here
+    char ch[]=palindromeStr.toCharArray();
+    for(int i=0;i<palindromeStr.length()/2;i++)
+    {
+        if(ch[i]!='a')
+        {
+            ch[i]='a';
+            return new String(ch);
+        }
+    }
+        
+     return "IMPOSSIBLE";
+    
+    }
+
+24.minimum swaps 
+ public static int minimumSwaps(List<Integer> popularity) {
+        int arr[]=new int[popularity.size()];
+        int sw=0;
+        int j=0;
+        for(Integer i:popularity)
+        arr[j++]=i;
+        int n=arr.length;
+        if(n==1)
+        return 0;
+        else
+        {
+        for(int i=0;i<n-1;i++)
+        {
+            int ind=i;
+            for(int k=i+1;k<n;k++)
+            {
+                if(arr[ind]<arr[k])
+                {
+                    ind=k;
+                }
+            }
+
+                if(ind!=i)
+                {
+                swap(arr,ind,i);
+                sw++;
+                }
+            
+        }
+        }
+        return sw;
+        
+
+    }
+    static void swap(int []arr,int i,int t)
+    {
+        int z=0;
+        z=arr[i];
+        arr[i]=arr[t];
+        arr[t]=z;
+        
+     }
+

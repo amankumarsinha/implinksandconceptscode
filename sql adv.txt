@@ -1,0 +1,21 @@
+SELECT 
+    productname, 
+    buyprice
+FROM
+    products p1
+WHERE
+    buyprice > (SELECT 
+            AVG(buyprice)
+        FROM
+            products
+        WHERE
+            productline = p1.productline)
+
+SELECT * FROM Products
+WHERE Price > (SELECT AVG(Price) FROM Products
+where SupplierID=3) and supplierid=3;
+
+here we see avg works if no constrin then find avg of whole table
+productline=p1.productline if you want to check self values
+
+ live.interviews@joinsuperset.com

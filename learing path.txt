@@ -1,0 +1,12 @@
+https://docs.oracle.com/javase/tutorial/index.html
+https://www.journaldev.com/7153/core-java-tutorial
+https://howtodoinjava.com/
+https://www.mkyong.com/tutorials/java-8-tutorials/
+https://www.youtube.com/watch?v=hBh_CC5y8-s
+https://www.youtube.com/watch?v=r59xYe3Vyks&list=PLS1QulWo1RIbfTjQvTdj8Y6yyq4R7g-Al
+https://www.youtube.com/playlist?list=PLd3UqWTnYXOnjGmyjD3zbIkyLXP15-6w0
+
+
+https://howtodoinjava.com/java-concurrency-tutorial/
+http://tutorials.jenkov.com/java-concurrency/index.html
+https://www.vogella.com/tutorials/JavaConcurrency/article.html
